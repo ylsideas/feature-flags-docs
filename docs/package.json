@@ -1,0 +1,19 @@
+{
+  "name": "feature-flag-docs",
+  "version": "0.0.1",
+  "description": "Documents for the Feature Flags for Laravel package",
+  "main": "index.js",
+  "authors": {
+    "name": "Peter Fox",
+    "email": "peter.fox@ylsideas.co"
+  },
+  "repository": "ylsideas/feature-flags/feature-flag-docs",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
