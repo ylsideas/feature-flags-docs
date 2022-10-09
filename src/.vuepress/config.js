@@ -1,14 +1,14 @@
-const { description } = require('../../package')
+
 
 module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Vuepress Docs Boilerplate',
+  title: 'Feature Flags for Laravel',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
-  description: description,
+  description: "Feature Flags for Laravel Package documentation",
 
   /**
    * Extra tags to be injected to the page HTML `<head>`
@@ -27,37 +27,45 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    repo: '',
-    editLinks: false,
+    repo: 'ylsideas/features-flags',
+    editLinks: true,
+    displayAllHeaders: true,
     docsDir: '',
-    editLinkText: '',
+    repoLabel: 'GitHub',
+    docsRepo: 'ylsideas/features-flags-docs',
+    editLinkText: 'Edit',
     lastUpdated: false,
+    smoothScroll: true,
     nav: [
       {
-        text: 'Guide',
-        link: '/guide/',
-      },
-      {
-        text: 'Config',
-        link: '/config/'
-      },
-      {
-        text: 'VuePress',
-        link: 'https://v1.vuepress.vuejs.org'
+        text: 'Fund',
+        link: 'https://github.com/sponsors/peterfox'
       }
     ],
     sidebar: {
-      '/guide/': [
+      '/': [
         {
-          title: 'Guide',
-          collapsable: false,
-          children: [
-            '',
-            'using-vue',
-          ]
-        }
-      ],
-    }
+          title: 'Introduction',
+          sidebarDepth: 3,
+          path: '/'
+        },
+        {
+          title: 'Installation',
+          sidebarDepth: 3,
+          path: '/installation/'
+        },
+        {
+          title: 'Configuration',
+          sidebarDepth: 2,
+          path: '/configuration/'
+        },
+        {
+          title: 'Usage',
+          sidebarDepth: 3,
+          path: '/usage/'
+        },
+      ]
+    },
   },
 
   /**
