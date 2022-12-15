@@ -2,6 +2,11 @@
 
 module.exports = {
   /**
+   * ref：https://v1.vuepress.vuejs.org/config/#base
+   */
+  'base': '/feature-flags/',
+
+  /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
   title: 'Feature Flags for Laravel',
@@ -9,6 +14,11 @@ module.exports = {
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
   description: "Feature Flags for Laravel Package documentation",
+
+  /**
+   * ref：https://v1.vuepress.vuejs.org/config/#dest
+   */
+  dest: 'build',
 
   /**
    * Extra tags to be injected to the page HTML `<head>`
