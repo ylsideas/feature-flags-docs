@@ -2,11 +2,6 @@
 
 module.exports = {
   /**
-   * ref：https://v1.vuepress.vuejs.org/config/#base
-   */
-  'base': '/feature-flags/',
-
-  /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
   title: 'Feature Flags for Laravel',
