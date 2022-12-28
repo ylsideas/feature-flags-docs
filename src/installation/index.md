@@ -1,4 +1,10 @@
+---
+next: 'Get Started | Markdown'
+---
+
 # Installation
+
+## Using Composer
 
 You can install the package via composer:
 

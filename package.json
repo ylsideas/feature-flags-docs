@@ -9,11 +9,13 @@
   },
   "repository": "ylsideas/feature-flags/feature-flag-docs",
   "scripts": {
-    "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "dev": "vitepress dev ./",
+    "build": "vitepress build ./",
+    "preview": "vitepress preview ./"
   },
   "license": "MIT",
   "devDependencies": {
-    "vuepress": "^1.9.7"
+    "vitepress": "^1.0.0-alpha.33",
+    "vue": "^3.2.45"
   }
 }
