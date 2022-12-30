@@ -1,5 +1,6 @@
 // .vitepress/theme/index.js
 import DefaultTheme from 'vitepress/theme'
+import './docs.css'
 
 export default {
     ...DefaultTheme,

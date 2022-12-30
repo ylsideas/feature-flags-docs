@@ -25,7 +25,7 @@ export default defineConfig({
             { text: 'Flagfox', link: 'https://www.flagfox.dev' },
         ],
         editLink: {
-            pattern: 'https://github.com/ylsideas/feature-flags-docs/:path',
+            pattern: 'https://github.com/ylsideas/feature-flags-docs/edit/main/src/:path',
             text: 'Edit this page on GitHub'
         },
         socialLinks: [

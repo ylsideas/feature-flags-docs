@@ -1,7 +1,3 @@
----
-next: 'Get Started | Markdown'
----
-
 # Installation
 
 ## Using Composer
