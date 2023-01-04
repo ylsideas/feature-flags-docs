@@ -21,7 +21,7 @@ export default defineConfig({
     themeConfig: {
         logo: '/logo.svg',
         nav: [
-            { text: 'GitHub', link: '/guide' },
+            { text: 'Packagist', link: 'https://packagist.org/packages/ylsideas/feature-flags' },
             { text: 'Flagfox', link: 'https://www.flagfox.dev' },
         ],
         editLink: {
