@@ -28,10 +28,16 @@ of the if statement, if the feature is off.
 
 The middleware will cause routes to be blocked if the specified feature does not have the correct state.
 
+You may provide a HTTP Status Code in the event of the route being unavailable by flag as well as being able to provide a message
+which will be shown the the end user. The message will be run through Laravel's tranlation mechanism allowing you to show
+different possible messages per language.
+
 ```php
 Route::get('/', 'SomeController@get')->middleware('feature:my-feature')
 Route::get('/', 'SomeController@get')->middleware('feature:my-feature,on')
 Route::get('/', 'SomeController@get')->middleware('feature:my-feature,off,404')
+Route::get('/', 'SomeController@get')->middleware('feature:my-feature,on,404,feature not available')
+Route::get('/', 'SomeController@get')->middleware('feature:my-feature,on,404,translatable.message')
 ```
 
 ## Validation Rules
