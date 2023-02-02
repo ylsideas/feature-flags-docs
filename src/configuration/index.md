@@ -14,7 +14,7 @@ To use the Database driver you will need to add the migration. You can do this b
 using the publish command.
 
 ```bash
-php artisan vendor:publish --tag=features-migration
+php artisan vendor:publish --provider="YlsIdeas\FeatureFlags\FeatureFlagsServiceProvider" --tag=features-migration
 ```
 
 This driver will use the nominated Database connection & table for your gateway.
@@ -241,3 +241,47 @@ Then you only need use it in your `features.php` config.
 ```
 
 You may also make your driver be `Toggleable` and `Cacheable`
+
+## Maintenance Mode
+
+If you wish to you may use Feature Flags for Laravel directly with maintenance
+mode and have different scenarios mapped out when features or enabled
+or disabled.
+
+Adding the following to a service provider's boot method for example in the
+AppServiceProvider will provide these.
+
+```php
+class AppServiceProvider
+{
+    public function boot()
+    {
+        Features::maintenanceMode()
+            ->onEnabled('system.down')
+            ->retry(60);
+            
+        Features::maintenanceMode()
+            ->onEnabled('system.ok')
+            ->except(['/nova/*']);
+    }
+}
+```
+
+Then to enable the driver, simply set the following
+in `config/app.php`.
+
+```php
+'maintenance' => [
+    'driver' => 'features',
+],
+```
+
+To be able to use the 'excepts' method you will need to
+change the `\App\Http\Middleware\PreventRequestsDuringMaintenance` class
+within your application to extend `\YlsIdeas\FeatureFlags\Middlewares\PreventRequestsDuringMaintenance`.
+
+You can automate this process by running:
+
+```bash
+php artisan vendor:publish --force --provider="YlsIdeas\FeatureFlags\FeatureFlagsServiceProvider" --tag=maintenance-middleware
+```

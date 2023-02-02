@@ -55,6 +55,7 @@ function sidebarConfig() {
                 {text: 'Caching With Gateways', link: '/configuration/#caching-with-gateways'},
                 {text: 'Turning Off Functionality', link: '/configuration/#turning-off-functionality'},
                 {text: 'Implementing Your Own Gateway', link: '/configuration/#implementing-your-own-gateway-drivers'},
+                {text: 'Maintenance Mode', link: '/configuration/#maintenance-mode'},
             ]
         },
         {
