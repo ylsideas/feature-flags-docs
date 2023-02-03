@@ -4,6 +4,15 @@ Feature Flags is incredibly extensible. Including the ability to set which sourc
 this is done via a pipeline. These pipes are referred to as Gateways. Each Gateway is visited until a Boolean result
 is returned.
 
+To choose your gateways, you need to modify the values within `config/features.php`. The name of each gateways must
+exist within the gateways key of the same config file.
+
+```php
+'pipeline' => ['in_memory', 'database'],
+```
+
+The order of the pipeline is determined by the order of these values.
+
 ## Gateways
 
 You may configure as many Gateways as you want to be a part of your pipeline and also use as many of the same driver as
@@ -245,11 +254,11 @@ You may also make your driver be `Toggleable` and `Cacheable`
 ## Maintenance Mode
 
 If you wish to you may use Feature Flags for Laravel directly with maintenance
-mode and have different scenarios mapped out when features or enabled
+mode and have different scenarios mapped out when features are enabled
 or disabled.
 
 Adding the following to a service provider's boot method for example in the
-AppServiceProvider will provide these.
+AppServiceProvider will configure these scenarios.
 
 ```php
 class AppServiceProvider
@@ -280,7 +289,8 @@ To be able to use the 'excepts' method you will need to
 change the `\App\Http\Middleware\PreventRequestsDuringMaintenance` class
 within your application to extend `\YlsIdeas\FeatureFlags\Middlewares\PreventRequestsDuringMaintenance`.
 
-You can automate this process by running:
+You can automate this process by running the publish command but please take note
+this will override the `PreventRequestsDuringMaintenance` middleware that already exists within your Laravel project.
 
 ```bash
 php artisan vendor:publish --force --provider="YlsIdeas\FeatureFlags\FeatureFlagsServiceProvider" --tag=maintenance-middleware
