@@ -128,8 +128,8 @@ Gate::define('feature', function (?User $user, $feature) {
 });
 ```
 
-The gate behaviour is different to other gateways in that it will always provide a true or false result. If you put this
-gateway before any others their will always be a result meaning gateways after the gate will not be executed.
+The gate's behaviour is different from other gateways in that it will always provide a true or false result. If you put this
+gateway before any others, there will always be a result, which means that any gateways after this one will not be executed.
 
 You can not use the on/off commands to affect the state of the features with this driver.
 
